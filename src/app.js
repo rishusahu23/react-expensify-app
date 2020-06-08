@@ -28,6 +28,6 @@ store.dispatch(startSetExpenses()).then(()=>{
         <AppRouter />
     </Provider>, 
     document.getElementById('app')
-    );
+    );  
 })
 
