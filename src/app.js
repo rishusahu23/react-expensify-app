@@ -4,7 +4,7 @@ import AppRouter from './routers/AppRouter';
 import {Provider} from 'react-redux'
 
 import configureStore from './store/configureStore';
-import { addExpense } from './actions/expenses';
+import { startSetExpenses } from './actions/expenses';
 import { setTextFilter } from './actions/filters';
 import getVisibleExpenses from './selectors/expenses';
 import 'normalize.css/normalize.css';
@@ -19,8 +19,15 @@ const store = configureStore();
 //const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
 //console.log(visibleExpenses);
 
-ReactDOM.render(<Provider store={store}>
+ReactDOM.render(<p>Loading...</p>, 
+    document.getElementById('app')
+);
+
+store.dispatch(startSetExpenses()).then(()=>{
+    ReactDOM.render(<Provider store={store}>
         <AppRouter />
     </Provider>, 
     document.getElementById('app')
-);
+    );
+})
+
