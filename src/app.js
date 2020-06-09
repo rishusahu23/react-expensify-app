@@ -10,6 +10,7 @@ import getVisibleExpenses from './selectors/expenses';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import {firebase} from './firebase/firebase'
+import LoadingPage from './components/LoadingPage'
 
 
 const store = configureStore();
@@ -20,7 +21,7 @@ const store = configureStore();
 //const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
 //console.log(visibleExpenses);
 
-ReactDOM.render(<p>Loading...</p>, 
+ReactDOM.render(<LoadingPage />, 
     document.getElementById('app')
 );
 
